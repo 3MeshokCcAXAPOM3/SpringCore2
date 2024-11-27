@@ -10,6 +10,8 @@ public class Application {
     public static void main(String[] args) {
         ApplicationContext applicationContext =
                 new AnnotationConfigApplicationContext(AppConfig.class);
+        AnimalsCage dogBean = applicationContext.getBean(AnimalsCage.class);
+        dogBean.whatAnimalSay();
         for (int i = 0; i < 5; i++) {
             AnimalsCage bean =
                     applicationContext.getBean(AnimalsCage.class);
